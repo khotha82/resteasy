@@ -1,0 +1,47 @@
+h2. BasePath: /jsp/swagger
+
+h2. Api Version: v1
+
+h2. Resources
+h3. /MessageRestService
+
+||{color:green}GET {color}|{color}[/messages/{param}|#printMessage]{color}|{color}Section Take Assignment Service{color}|
+
+{anchor:printMessage}
+h1. Section Take Assignment Service
+Start the student attempt for the given assignment
+
+h3. Request
+
+h5. HTTP Request
+{code}GET /messages/{param}{code}
+
+h5. URL Parameters
+|| Parameter Name || Type || Required || Description ||
+|param | [#string] | true | |
+
+
+h5. Authorization
+[CONTACTS:Contact Service Developers Guide#2.AuthenticationandAuthorization]
+
+
+
+
+
+h3. Response
+
+h5. Response Status Codes
+
+The following status codes may be returned by the server in response to this type of request.
+
+|| HTTP Status || Description ||
+|600|Unexpected database error has occurred while processing the request|
+|700|Unexpected system error has occurred while processing th|
+
+h5. Response Body
+com.github.kongchen.swagger.docgen.mustache.MustacheResponseClass@4dd3abf6
+
+
+
+h1. Data Types
+

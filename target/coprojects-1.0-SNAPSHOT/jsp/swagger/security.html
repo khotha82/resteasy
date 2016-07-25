@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenAPI Security</title>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
+  <link href='css/highlight.default.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+
+<div id="header">
+
+  <div class="swagger-ui-wrap" style="display:none;">
+    <a  style="display:none;" id="logo" href="http://swagger.wordnik.com">swagger</a>
+    <form id="api_selector">
+      <div class="input icon-btn">
+        <img style="display:none;" id="show-pet-store-icon" src="images/pet_store_api.png" title="Show Swagger Petstore Example Apis">
+      </div>
+      <div class="input icon-btn">
+        <img style="display:none;" id="show-wordnik-dev-icon" src="images/wordnik_api.png" title="Show Wordnik Developer Apis">
+      </div>
+      <div class="input"><input type="text" style="display:none;" placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl"></div>
+      <div class="input"><input type="text" style="display:none;" placeholder="api_key" id="input_apiKey" name="apiKey"></div>
+      <div class="input"><a style="display:none;" id="explore" href="#">Explore</a></div>
+    </form>
+  </div>
+  <div class="swagger-ui-wrap">
+  	<a class="homeLogo large-3 columns header-nav">OpenAPI Documentation</a>
+        <!--<div class="header-nav"></div>-->
+  </div>
+</div>
+<div id="body_container">
+	
+	<div id="header-msg">
+	<strong>Security</strong>
+	<br><br>
+	<h3>Authorization</h3>
+	<p>The HTTP Authorization header with oAuth info as specified in oAuth 1.0 is used for all URIs. Please note this is implemented as 2-legged. Read details here: <a href="http://hueniverse.com/oauth/guide/">http://hueniverse.com/oauth/guide/</a></p>	
+	<pre><code>Authorization: OAuth realm="mhhe",
+              oauth_consumer_key="bbim_oauth_key",
+              oauth_token="",
+              oauth_signature_method="HMAC-SHA1",
+              oauth_signature="wOJIO9A2W5mFwDgiDvZbTSMK%2FPY%3D",
+              oauth_timestamp="137131200",
+              oauth_nonce="4572616e48616d6d65724c61686176",
+              oauth_version="1.0"</code>
+          </pre>
+          <h3>OAUTH Error Codes</h3>
+         <table class="matchpre" width="100%" style="border:1px solid #BBBBBB;">
+	    <thead>
+	      <tr style="background:none repeat scroll 0 0 #6199DF;color:#FFFFFF;">
+	        <th>Error Code</th>
+	        <th>Error Description</th>
+	      </tr>
+	    </thead>
+	    <tbody style="border:1px solid #4D90FE;">
+	      <tr >
+	        <td>OAPI-OAUTH-000</td>
+	        <td><code class="apitype">Invalid header</code></td>
+	      </tr>		
+	      <tr >
+	        <td>OAPI-OAUTH-001</td>
+	        <td><code class="apitype">Consumer is not valid</code></td>
+	      </tr>
+	      <tr >
+	        <td>OAPI-OAUTH-002</td>
+	        <td><code class="apitype">Signature does not match</code></td>
+	      </tr>
+	      <tr >
+	        <td>OAPI-OAUTH-003</td>
+	        <td><code class="apitype">Timestamp is different more than +-10 minutes (Configurable for each consumer)</code></td>
+	      </tr>
+	      <tr >
+	        <td>OAPI-OAUTH-004</td>
+	        <td><code class="apitype">Nonce is repeated</code></td>
+	      </tr>
+	      
+	    </tbody>
+	  </table>	
+	</div>	
+	
+</div>
+<div id="footer">
+	<div id="footer-msg"><span>&copy; MHEducation</span></div>
+</div>
+
+
+</body>
+
+</html>
