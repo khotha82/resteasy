@@ -12,8 +12,9 @@ public class MessageApplication extends Application{
     private Set<Object> singletons = new HashSet<Object>();
     public MessageApplication() {
         singletons.add(new MessageRestService());
-        singletons.add(io.swagger.jaxrs.listing.ApiListingResource.class);
-        singletons.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
+
+
+
 
     }
     @Override
