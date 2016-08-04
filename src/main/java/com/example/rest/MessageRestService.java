@@ -5,10 +5,7 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -20,16 +17,17 @@ import javax.ws.rs.core.MediaType;
 public class MessageRestService {
 
 
-    @GET
+    @POST
     @Path("/{param}")
-    @Produces(MediaType.TEXT_PLAIN)
-    @ApiOperation(value="get message",httpMethod = "GET",response = String.class)
-    @ApiResponses(value={@ApiResponse(code=200,message="success")})
-    public String printMessage(@PathParam("param") String msg) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value="get message",httpMethod = "POST",response = TestResponse.class ,produces = MediaType.APPLICATION_JSON,consumes = MediaType.APPLICATION_JSON)
+    @ApiResponses(value={@ApiResponse(code=200,message="success",response = TestResponse.class )})
+    public TestResponse printMessage(@PathParam("param") TestResponse msg) {
 
-        String result = "Restful example : " + msg;
+        String result = "Restful example : " + msg.getName();
 
-        return result;
+        return new TestResponse(result);
 
     }
 
